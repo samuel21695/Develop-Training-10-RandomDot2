@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+    }
+    #board{
+      width: 500px;
+      height: 500px;
+      background-color: grey;
+    }
+    #board > div {
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="board">
+    </div>
+    <button id="btn">Play!</button>
+  </div>
+  <script>
+    const button = document.getElementById('btn')
+    const gameBoard = document.getElementById('board')
+
+    button.addEventListener('click', function() {
+      let html = "";
+      for(i=0; i < 3; i++) {
+        let top = Math.floor(Math.random() * 491);
+        let left = Math.floor(Math.random() * 491);
+        html += "<div class = 'dot' style='top:"+top+"px;left:"+left+"px'></div>";
+      }
+      gameBoard.innerHTML = html;
+    });
+
+    const dot = document.getElementsByClassName('dot');
+    dot.addEventListener('click', function() {
+      console.log('hi')
+    })
+
+
+  </script>
+</body>
+</html>
