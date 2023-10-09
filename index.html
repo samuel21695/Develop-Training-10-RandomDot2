@@ -42,11 +42,14 @@
       }
       gameBoard.innerHTML = html;
     });
-
-    const dot = document.getElementsByClassName('dot');
-    dot.addEventListener('click', function() {
-      console.log('hi')
-    })
+    
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach( (dot) => {
+      dot.addEventListener('click', function() {
+        console.log('hi');
+      })
+    });
+    
 
 
   </script>
